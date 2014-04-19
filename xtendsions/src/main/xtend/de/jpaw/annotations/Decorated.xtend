@@ -44,6 +44,7 @@ class DecoratedProcessor extends AbstractFieldProcessor {
 	                returnType = m.returnType
 	                for (p: m.parameters)
 	                    addParameter(p.simpleName, p.type)
+	                exceptions = m.exceptions
 	                body = [ '''«IF m.returnType != primitiveVoid»return «ENDIF»this.«f.simpleName».«m.simpleName»(«m.parameters.map[simpleName].join(', ')»);''']
 	            ]
             }
