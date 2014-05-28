@@ -20,3 +20,20 @@ class AnnoTestWithGenerics {
 	}
 	
 } 
+
+
+
+interface I1 extends DemoInterfaceWithGenerics<RuntimeException> {
+	
+}
+
+class AnnoTestWithGenerics2 {
+	@Decorated
+	private I1 delegator2
+	
+	// sample for a method implemented locally
+	def Long compute(Long a, Long b) {
+		return a + b
+	}
+	
+} 
