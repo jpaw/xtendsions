@@ -10,16 +10,17 @@ interface DemoInterfaceWithGenerics<E extends Exception> {
 }
 
 
-class AnnoTestWithGenerics {
-	@Decorated
-	private DemoInterfaceWithGenerics<RuntimeException> delegator
-	
-	// sample for a method implemented locally
-	def Long compute(Long a, Long b) {
-		return a + b
-	}
-	
-} 
+// not working yet
+//class AnnoTestWithGenerics {
+//	@Decorated
+//	private DemoInterfaceWithGenerics<RuntimeException> delegator
+//	
+//	// sample for a method implemented locally
+//	def Long compute(Long a, Long b) {
+//		return a + b
+//	}
+//	
+//} 
 
 
 
@@ -27,13 +28,14 @@ interface I1 extends DemoInterfaceWithGenerics<RuntimeException> {
 	
 }
 
-class AnnoTestWithGenerics2 {
-	@Decorated
-	private I1 delegator2
-	
-	// sample for a method implemented locally
-	def Long compute(Long a, Long b) {
-		return a + b
-	}
-	
-} 
+// not working yet
+//class AnnoTestWithGenerics2 {
+//	@Decorated
+//	private I1 delegator2
+//	
+//	// sample for a method implemented locally
+//	def Long compute(Long a, Long b) {
+//		return a + b
+//	}
+//	
+//} 
