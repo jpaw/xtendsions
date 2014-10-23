@@ -35,7 +35,7 @@ class DecoratedProcessor extends AbstractFieldProcessor {
         for (m: i.declaredMethods) {
             // check if m exists in cls or its superclasses
             val mm = cls.getDeclaredMethod(m)
-            if (mm != null) {
+            if (mm !== null) {
                 if (!m.returnType.isAssignableFrom(mm.returnType))
                     mm.addWarning('''return type is incompatible to requested type «m.returnType.simpleName»''')
             } else {

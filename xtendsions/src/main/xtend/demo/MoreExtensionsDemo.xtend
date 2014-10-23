@@ -1,5 +1,6 @@
 package demo
 
+import org.eclipse.xtend.lib.annotations.Data
 import static extension de.jpaw.xtend.sions.MoreIterableExtensions.*
 import java.math.BigDecimal
 
