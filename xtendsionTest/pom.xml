@@ -4,17 +4,17 @@
 
 	<groupId>de.jpaw</groupId>
 	<artifactId>xtendsionTest</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2</version>
 
 	<name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
 	<url>http://www.jpaw.de/projects/bonaparte/index.html</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <xtend.version>2.7.2</xtend.version>            <!-- UPTODATE 2014-09-16 -->
+        <xtend.version>2.7.3</xtend.version>            <!-- UPTODATE 2014-11-20 -->
         <slf4j.version>1.7.7</slf4j.version>            <!-- http://www.slf4j.org/ UPTODATE 2014-04-01 -->
         <logback.version>1.1.2</logback.version>        <!-- http://logback.qos.ch/ UPTODATE 2014-04-02 -->
-        <jodatime.version>2.4</jodatime.version>
+        <jodatime.version>2.5</jodatime.version>
 	</properties>
 
 	<licenses>
@@ -257,7 +257,7 @@
 		<dependency>
 			<groupId>de.jpaw</groupId>
 			<artifactId>xtend-sions</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
