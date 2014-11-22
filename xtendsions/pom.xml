@@ -2,72 +2,25 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.jpaw</groupId>
+    <parent>
+        <groupId>de.jpaw</groupId>
+        <artifactId>jpaw-se-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
     <artifactId>xtend-sions</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
     <url>http://www.jpaw.de/projects/bonaparte/index.html</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <xtend.version>2.7.3</xtend.version>            <!-- UPTODATE 2014-11-20 -->
-        <slf4j.version>1.7.7</slf4j.version>            <!-- http://www.slf4j.org/ -->
-        <logback.version>1.1.2</logback.version>        <!-- http://logback.qos.ch/ -->
-        <jodatime.version>2.5</jodatime.version>
-    </properties>
-
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-
-    <organization>
-        <name>Michael Bischoff</name>
-        <url>http://www.jpaw.de</url>
-    </organization>
-    <developers>
-        <developer>
-            <id>mbi</id>
-            <name>Michael Bischoff</name>
-            <email>jpaw@online.de</email>
-            <url>http://www.jpaw.de</url>
-        </developer>
-    </developers>
-
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>repo-snapshots</id>
-            <name>repo-snapshots</name>
-            <url>${repo.url}/libs-snapshot-local</url>
-        </snapshotRepository>
-        <repository>
-            <id>repo-releases</id>
-            <name>repo-releases</name>
-            <url>${repo.url}/libs-release-local</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.7</version>
                     <executions>
                         <execution>
                             <id>add-source</id>
@@ -98,18 +51,9 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.9.1</version>
-                    <configuration>
-                        <charset>UTF-8</charset>
-                    </configuration>
-                </plugin>
-                <plugin>
                     <!-- must delete generated sources as well -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.5</version>
                     <configuration>
                         <filesets>
                             <fileset>
@@ -132,36 +76,6 @@
                             </fileset>
                         </filesets>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.eclipse.xtend</groupId>
-                    <artifactId>xtend-maven-plugin</artifactId>
-                    <version>${xtend.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>compile</goal>
-                                <goal>testCompile</goal>
-                            </goals>
-                            <configuration>
-                                <outputDirectory>${project.basedir}/src/main/xtend-gen</outputDirectory>
-                                <testOutputDirectory>${project.basedir}/src/test/xtend-gen</testOutputDirectory>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
 
@@ -187,17 +101,6 @@
                 <groupId>org.eclipse.xtend</groupId>
                 <artifactId>xtend-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <!-- bonaparte core should be compiled for a 1.6 target 
-                        in order to allow Android compatibility -->
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -215,7 +118,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>5.12.1</version>   <!-- 5.14.9 or 6.7 use waaay more dependencies -->
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -236,7 +139,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>${javadoc.plugin.version}</version>
                 <configuration>
                     <charset>UTF-8</charset>
                 </configuration>
