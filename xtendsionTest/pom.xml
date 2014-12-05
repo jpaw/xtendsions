@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     
     <parent>
         <groupId>de.jpaw</groupId>
@@ -9,151 +9,151 @@
         <relativePath/>
     </parent>
     
-	<artifactId>xtendsionTest</artifactId>
-	<version>1.0.3</version>
+    <artifactId>xtendsionTest</artifactId>
+    <version>1.0.3</version>
 
-	<name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
-	<url>http://www.jpaw.de/projects/bonaparte/index.html</url>
+    <name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
+    <url>http://www.jpaw.de/projects/bonaparte/index.html</url>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>add-source</id>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>add-source</goal>
-							</goals>
-							<configuration>
-								<sources>
-									<source>src/main/xtend</source>
-									<source>src/main/xtend-gen</source>
-								</sources>
-							</configuration>
-						</execution>
-						<execution>
-							<id>add-test-source</id>
-							<phase>generate-test-sources</phase>
-							<goals>
-								<goal>add-test-source</goal>
-							</goals>
-							<configuration>
-								<sources>
-									<source>src/test/xtend</source>
-									<source>src/test/xtend-gen</source>
-								</sources>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<!-- must delete generated sources as well -->
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-clean-plugin</artifactId>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>add-source</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>add-source</goal>
+                            </goals>
+                            <configuration>
+                                <sources>
+                                    <source>src/main/xtend</source>
+                                    <source>src/main/xtend-gen</source>
+                                </sources>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>add-test-source</id>
+                            <phase>generate-test-sources</phase>
+                            <goals>
+                                <goal>add-test-source</goal>
+                            </goals>
+                            <configuration>
+                                <sources>
+                                    <source>src/test/xtend</source>
+                                    <source>src/test/xtend-gen</source>
+                                </sources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <!-- must delete generated sources as well -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
                     <version>${clean.plugin.version}</version>
-					<configuration>
-						<filesets>
-							<fileset>
-								<directory>src/main/xtend-gen</directory>
-								<includes>
-									<include>**</include>
-								</includes>
-							</fileset>
-							<fileset>
-								<directory>src/test/xtend-gen</directory>
-								<includes>
-									<include>**</include>
-								</includes>
-							</fileset>
-							<fileset>
-								<directory>test-output</directory>
-								<includes>
-									<include>**</include>
-								</includes>
-							</fileset>
-						</filesets>
-					</configuration>
-				</plugin>
-			</plugins>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>src/main/xtend-gen</directory>
+                                <includes>
+                                    <include>**</include>
+                                </includes>
+                            </fileset>
+                            <fileset>
+                                <directory>src/test/xtend-gen</directory>
+                                <includes>
+                                    <include>**</include>
+                                </includes>
+                            </fileset>
+                            <fileset>
+                                <directory>test-output</directory>
+                                <includes>
+                                    <include>**</include>
+                                </includes>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </plugin>
+            </plugins>
 
-		</pluginManagement>
+        </pluginManagement>
 
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${javadoc.plugin.version}</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>xtend-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.xtend</groupId>
+                <artifactId>xtend-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>de.jpaw</groupId>
-			<artifactId>xtend-sions</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.jpaw</groupId>
+            <artifactId>xtend-sions</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
             <version>${jodatime.version}</version>
-		</dependency>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.xtend</groupId>
-			<artifactId>org.eclipse.xtend.lib</artifactId>
-			<version>${xtend.version}</version>
-		</dependency>
-		<!-- <dependency> <groupId>org.eclipse.xtext</groupId> <artifactId>org.eclipse.xtext.standalone</artifactId> 
-			<version>${xtend.version}</version> </dependency> -->
-	</dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.xtend</groupId>
+            <artifactId>org.eclipse.xtend.lib</artifactId>
+            <version>${xtend.version}</version>
+        </dependency>
+        <!-- <dependency> <groupId>org.eclipse.xtext</groupId> <artifactId>org.eclipse.xtext.standalone</artifactId> 
+            <version>${xtend.version}</version> </dependency> -->
+    </dependencies>
 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${javadoc.plugin.version}</version>
-				<configuration>
-					<charset>UTF-8</charset>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
+                <configuration>
+                    <charset>UTF-8</charset>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>
