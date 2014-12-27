@@ -39,14 +39,14 @@ class DecoratedProcessor extends AbstractFieldProcessor {
                 if (!m.returnType.isAssignableFrom(mm.returnType))
                     mm.addWarning('''return type is incompatible to requested type «m.returnType.simpleName»''')
             } else {
-	            // not present, add it!
-	            cls.addMethod(m.simpleName) [
-	                returnType = m.returnType
-	                for (p: m.parameters)
-	                    addParameter(p.simpleName, p.type)
-	                exceptions = m.exceptions
-	                body = [ '''«IF m.returnType != primitiveVoid»return «ENDIF»this.«f.simpleName».«m.simpleName»(«m.parameters.map[simpleName].join(', ')»);''']
-	            ]
+                // not present, add it!
+                cls.addMethod(m.simpleName) [
+                    returnType = m.returnType
+                    for (p: m.parameters)
+                        addParameter(p.simpleName, p.type)
+                    exceptions = m.exceptions
+                    body = [ '''«IF m.returnType != primitiveVoid»return «ENDIF»this.«f.simpleName».«m.simpleName»(«m.parameters.map[simpleName].join(', ')»);''']
+                ]
             }
         }
         for (xi: i.extendedInterfaces)
