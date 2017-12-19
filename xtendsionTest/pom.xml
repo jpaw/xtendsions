@@ -5,12 +5,12 @@
     <parent>
         <groupId>de.jpaw</groupId>
         <artifactId>jpaw-se-parent</artifactId>
-        <version>1.1.4</version>
+        <version>1.1.5</version>
         <relativePath/>
     </parent>
     
     <artifactId>xtendsionTest</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
 
     <name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
     <url>http://www.jpaw.de/projects/bonaparte/index.html</url>
