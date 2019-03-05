@@ -5,12 +5,12 @@
     <parent>
         <groupId>de.jpaw</groupId>
         <artifactId>jpaw-se-parent</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
         <relativePath/>
     </parent>
     
     <artifactId>xtendsionTest</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0</version>
 
     <name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
     <url>http://www.jpaw.de/projects/bonaparte/index.html</url>
@@ -118,7 +118,6 @@
         <dependency>
             <groupId>org.eclipse.xtend</groupId>
             <artifactId>org.eclipse.xtend.lib</artifactId>
-            <version>${xtend.version}</version>
         </dependency>
     </dependencies>
 
