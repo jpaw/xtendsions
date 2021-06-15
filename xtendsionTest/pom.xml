@@ -10,7 +10,7 @@
     </parent>
     
     <artifactId>xtendsionTest</artifactId>
-    <version>1.10.0</version>
+    <version>1.10.1</version>
 
     <name>eXtension for the IterableExtensions of the xtend library, also starting a collection of some active annotations</name>
     <url>http://www.jpaw.de/projects/bonaparte/index.html</url>
